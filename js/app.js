@@ -72,20 +72,31 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 
-
-
 // Scroll to section on link click
+let menu = document.getElementById("#navbar__List");
+let li = document.getElementsByTagName("li");
+let page = document.getElementByTagName("section");
 
-// Set sections as active
-// window.addEventListener("scroll", function() {
-//     if   (window.scrollY >= 450)  {
-//         document.selectElementById('#up');
-//          setTimeout(function () {
-//             document.up.classList.add("sticky");
-//          }, 2000);
-//          } else {
-//          setTimeout(function () {
-//            document.up.classList.remove("sticky");
-//          }, 2000);
-//        }
-// });
+document.addEventListener('click', function(){
+  if  (document.menu.li.innerHTML = "Section 1") {
+    page = "#section1".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+   } else {
+ if  (document.menu.li.innerHTML = "Section 2") {
+  page = "#section2".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+ } else { 
+   if (document.menu.li.innerHTML = "Section 3") {
+    page = "#section3".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+   } else {
+     if (document.menu.li.innerHTML = "Section 4") {
+      page = "#section4".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  } 
+ }
+}
+   }
+})
+ 
+
+
+
+
+
