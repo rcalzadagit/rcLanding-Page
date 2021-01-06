@@ -34,13 +34,21 @@
 */
 
 // build the nav
-// window.onscroll = function() {
-//     navList.style.display = "flex";
-// };
-// // After no scroll or click activity the navbar hides
-// window.addEventListener("click", function() {
-//     setTimeout("hideMenu()", 50000);
-// });
+const header = document.querySelector('.page__header');
+
+window.onscroll = function() {
+  header.style.display = "block";
+};
+
+function hideMenu() {
+  header.style.display = "none";
+};
+
+// After no scroll or click activity the navbar hides
+window.addEventListener("click", function() {
+    setTimeout("hideMenu()", 20000);
+   
+});
 
 
 // Add class 'active' to section when near top of viewport
@@ -58,45 +66,87 @@
 
 // Build menu
 
-let sections = ["Section 1", "Section 2", "Section 3", "Section 4"];
+// let sections = ["Section 1", "Section 2", "Section 3", "Section 4"];
 
-let navbar = document.querySelector('#navbar__list');
+// let navbar = document.querySelector('#navbar__list');
 
-for (let i = 0; i < sections.length; i++) {
-  let section = sections[i];
+// for (let i = 0; i < sections.length; i++) {
+//   let section = sections[i];
 
-  let listItem = document.createElement('li');
-  listItem.textContent = section;
+//   let listItem = document.createElement('li');
+//   listItem.textContent = section;
 
-  navbar.appendChild(listItem);
-}
+//   navbar.appendChild(listItem);
+// }
 
 
 // Scroll to section on link click
-let menu = document.getElementById("#navbar__List");
-let li = document.getElementsByTagName("li");
-let page = document.getElementByTagName("section");
+var a = document.createElement("a");
+var dlist = document.getElementById("navbar__list");
+var newMenu = document.createElement("li");
 
-document.addEventListener('click', function(){
-  if  (document.menu.li.innerHTML = "Section 1") {
-    page = "#section1".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-   } else {
- if  (document.menu.li.innerHTML = "Section 2") {
-  page = "#section2".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
- } else { 
-   if (document.menu.li.innerHTML = "Section 3") {
-    page = "#section3".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-   } else {
-     if (document.menu.li.innerHTML = "Section 4") {
-      page = "#section4".scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-  } 
- }
-}
-   }
-})
+a.textContent = "Section 1";
+a.setAttribute('href', "#section1");
+newMenu.appendChild(a);
+dlist.appendChild(newMenu);
+
+var a = document.createElement("a");
+var dlist = document.getElementById("navbar__list");
+var newMenu = document.createElement("li");
  
+a.textContent = "Section 2";
+a.setAttribute('href', "#section2");
+newMenu.appendChild(a);
+dlist.appendChild(newMenu);
 
+var a = document.createElement("a");
+var dlist = document.getElementById("navbar__list");
+var newMenu = document.createElement("li");
+ 
+a.textContent = "Section 3";
+a.setAttribute('href', "#section3");
+newMenu.appendChild(a);
+dlist.appendChild(newMenu);
 
+var a = document.createElement("a");
+var dlist = document.getElementById("navbar__list");
+var newMenu = document.createElement("li");
+ 
+a.textContent = "Section 4";
+a.setAttribute('href', "#section4");
+newMenu.appendChild(a);
+dlist.appendChild(newMenu);
 
+//////////////////////////////////////////////////////////////
 
+window.addEventListener("scroll", function(event) {
+  var top = this.scrollY
+      // left =this.scrollX;
 
+if (top < 500) {
+  document.querySelector(".back-to-top-link").style.display = "none";
+} else {
+  document.querySelector(".back-to-top-link").style.display = "block";
+}
+});
+
+///////////////////////////////////////////////////////////////////////
+
+document.addEventListener("click", function() {
+  if (document.querySelector("#section1")) {
+    div.classList.add(".your-active-class");
+} else if 
+  (document.querySelector("#section2")) {
+  div.classList.add(".your-active-class");
+  } else if 
+    (document.querySelector("#section3")) {
+      div.classList.add(".your-active-class");
+      } else if 
+        (document.querySelector("#section4")) {
+          div.classList.add(".your-active-class");
+          } else 
+            div.classList.remove(".your-active-class");
+            
+          });
+        
+        

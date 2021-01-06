@@ -244,8 +244,8 @@ section.your-active-class .landing__container::after {
 	}
 }
 .back-to-top-link {
-    /* display: inline-block; */
-    /* display: none; */
+    /* display: block; */
+    display: none;
     text-decoration: none;
     font-size: 2rem;
     line-height: 3rem;
@@ -260,6 +260,8 @@ section.your-active-class .landing__container::after {
     float: right;
   }
 
+  
+
 .sticky {
         position: -webkit-sticky;
         position: sticky;
@@ -272,5 +274,9 @@ section.your-active-class .landing__container::after {
 
       li:hover {
         background-color: #EEE;
+      }
+
+      a {
+        text-decoration: none;
       }
  
