@@ -34,6 +34,9 @@
 */
 
 // build the nav
+
+//////////////////////////////////////////////////////////////////////////
+// After no scroll or click activity the navbar hides ////////////////////
 const header = document.querySelector('.page__header');
 
 window.onscroll = function() {
@@ -44,12 +47,11 @@ function hideMenu() {
   header.style.display = "none";
 };
 
-// After no scroll or click activity the navbar hides
 window.addEventListener("click", function() {
-    setTimeout("hideMenu()", 20000);
+    setTimeout("hideMenu()", 50000);
    
 });
-
+///////////////////////////////////////////////////////////////////////////
 
 // Add class 'active' to section when near top of viewport
 
@@ -64,29 +66,17 @@ window.addEventListener("click", function() {
  *
 */
 
-// Build menu
-
-// let sections = ["Section 1", "Section 2", "Section 3", "Section 4"];
-
-// let navbar = document.querySelector('#navbar__list');
-
-// for (let i = 0; i < sections.length; i++) {
-//   let section = sections[i];
-
-//   let listItem = document.createElement('li');
-//   listItem.textContent = section;
-
-//   navbar.appendChild(listItem);
-// }
-
-
+/////////////////////////////////////////////////////////////////////////////
+// Menu
 // Scroll to section on link click
+
 var a = document.createElement("a");
 var dlist = document.getElementById("navbar__list");
 var newMenu = document.createElement("li");
 
 a.textContent = "Section 1";
 a.setAttribute('href', "#section1");
+a.setAttribute("class", "target");
 newMenu.appendChild(a);
 dlist.appendChild(newMenu);
 
@@ -96,6 +86,7 @@ var newMenu = document.createElement("li");
  
 a.textContent = "Section 2";
 a.setAttribute('href', "#section2");
+a.setAttribute("class", "target");
 newMenu.appendChild(a);
 dlist.appendChild(newMenu);
 
@@ -105,6 +96,7 @@ var newMenu = document.createElement("li");
  
 a.textContent = "Section 3";
 a.setAttribute('href', "#section3");
+a.setAttribute("class", "target");
 newMenu.appendChild(a);
 dlist.appendChild(newMenu);
 
@@ -114,14 +106,16 @@ var newMenu = document.createElement("li");
  
 a.textContent = "Section 4";
 a.setAttribute('href', "#section4");
+a.setAttribute("class", "target");
 newMenu.appendChild(a);
 dlist.appendChild(newMenu);
 
-//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////
+// Back to Top Button appears after Section 1.    //
 
 window.addEventListener("scroll", function(event) {
   var top = this.scrollY
-      // left =this.scrollX;
 
 if (top < 500) {
   document.querySelector(".back-to-top-link").style.display = "none";
@@ -130,23 +124,45 @@ if (top < 500) {
 }
 });
 
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+// Sections Active Background color area. 
 
-document.addEventListener("click", function() {
-  if (document.querySelector("#section1")) {
-    div.classList.add(".your-active-class");
-} else if 
-  (document.querySelector("#section2")) {
-  div.classList.add(".your-active-class");
-  } else if 
-    (document.querySelector("#section3")) {
-      div.classList.add(".your-active-class");
-      } else if 
-        (document.querySelector("#section4")) {
-          div.classList.add(".your-active-class");
-          } else 
-            div.classList.remove(".your-active-class");
+        window.addEventListener("scroll", function(event) {
+          let vnow1 = this.scrollY
+        
+        if (vnow1 < 550) {
+          document.querySelector("#section1").classList.add("your-active-class");
+        } else {
+          document.querySelector("#section1").classList.remove("your-active-class");
+        }
+        });
+////////////////////////////////////////////////////////////////////////////////////////
+        window.addEventListener("scroll", function(event) {
+          let vnow2 = this.scrollY 
+        
+        if (vnow2 > 551 || vnow2 <= 1000) {
+          document.querySelector("#section2").classList.add("your-active-class");
+        } else {
+          document.querySelector("#section2").classList.remove("your-active-class");
+        }
+        });
+//////////////////////////////////////////////////////////////////////////////////////////
+        window.addEventListener("scroll", function(event) {
+          let vnow3 = this.scrollY
             
-          });
-        
-        
+        if (vnow3 >= 1001 || vnow3 <= 1500) {
+          document.querySelector("#section3").classList.add("your-active-class");
+        } else {
+          document.querySelector("#section3").classList.remove("your-active-class");
+        }
+        });
+  ////////////////////////////////////////////////////////////////////////////////////
+        window.addEventListener("scroll", function(event) {
+          let vnow4 = this.scrollY
+            
+        if (vnow4 > 1501) {
+          document.querySelector("#section4").classList.add("your-active-class");
+        } else {
+          document.querySelector("#section4").classList.remove("your-active-class");
+        }
+        });

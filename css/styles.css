@@ -267,16 +267,28 @@ section.your-active-class .landing__container::after {
         position: sticky;
         bottom: 10rem;
         align-self: flex-end;
-
-      
-    
       }
 
+
       li:hover {
-        background-color: #EEE;
+        background-color: rgb(27, 241, 141);
+      }
+      li:active {
+        background-color: rgb(27, 241, 141);
+      }
+      li:target {
+        background-color: rgb(72, 255, 0);
       }
 
       a {
         text-decoration: none;
       }
  
+      .target:focus {
+        color: #f32066;
+        } 
+ 
+          .target:target {
+            color: red
+          }
+         
